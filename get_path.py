@@ -2,15 +2,15 @@ import os
 
 
 def download_relative_way(name_class, number):
-    return f"dataset/download_data/{name_class}/{str(number).zfill(4)}.jpg"
+    return f"dataset/{name_class}/{str(number).zfill(4)}.jpg"
 
 
 def changed_relative_way(name_class, number):
-    return f"dataset/dataset_another/{name_class}_{str(number).zfill(4)}.jpg"
+    return f"dataset/changed_dataset/{name_class}_{str(number).zfill(4)}.jpg"
 
 
 def random_relative_way(number):
-    return f"dataset/dataset_number/{str(number).zfill(4)}.jpg"
+    return f"dataset/random_dataset/{str(number).zfill(4)}.jpg"
 
 
 def get_absolute_way(name_class, number, mode):
