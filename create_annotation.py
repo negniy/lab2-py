@@ -10,9 +10,7 @@ def create_annotation(class_name):
         count=Count()
         while ( count.num != 1050 ) :
             if (os.path.isfile(get_path.get_absolute_way(class_name, count.num, "download")) == True ):
-                file_writer.writerow([get_path.get_absolute_way(class_name, count.num, "download"),
-                                      get_path.download_relative_way(class_name, count.num), 
-                                      class_name])
+                file_writer.writerow([get_path.get_absolute_way(class_name, count.num, "download"), get_path.download_relative_way(class_name, count.num), class_name])
             next(count)
         
     

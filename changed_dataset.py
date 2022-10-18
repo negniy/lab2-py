@@ -11,6 +11,7 @@ def copy_to_another( class_name):
             shutil.copyfile(get_path.get_absolute_way(class_name, count.num, "download"), get_path.get_absolute_way(class_name, count.num, "changed"))
         next(count)
 
+
 def main():
         print("Start changing")
         if not os.path.isdir("dataset/changed_dataset"):
