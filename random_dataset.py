@@ -1,5 +1,4 @@
 import os
-from iterator import Count
 import get_path
 import shutil
 import csv
@@ -8,17 +7,16 @@ import random
 
 def random_copy(class_name):
     with open("random_annotation.csv", mode="a", encoding='utf-8') as w_file:
-        file_writer = csv.writer(w_file, delimiter = ",", lineterminator="\r")
+        file_writer = csv.writer(w_file, delimiter = ";", lineterminator="\r")
         file_writer.writerow(["Абсолютный путь", "Относительный путь", "Класс"])
-        count = Count()
-        while (count.num != 1050):
+        for i in range(1050):
             rand_number = random.randint(0, 10000)
-            if (os.path.isfile(get_path.get_absolute_way(class_name, count.num, "download")) == True):
+            if (os.path.isfile(get_path.get_absolute_way(class_name, i, "download")) == True):
                 while(os.path.isfile(get_path.get_absolute_way(class_name, rand_number, "random")) == True):
                     rand_number = random.randint(0, 10000)
-                shutil.copyfile(get_path.get_absolute_way(class_name, count.num, "download"), get_path.get_absolute_way(class_name, rand_number, "random"))
-                file_writer.writerow([get_path.get_absolute_way(class_name, count.num, "download"), get_path.random_relative_way(rand_number), class_name])
-            next(count)
+                shutil.copyfile(get_path.get_absolute_way(class_name, i, "download"), get_path.get_absolute_way(class_name, rand_number, "random"))
+                file_writer.writerow([get_path.get_absolute_way(class_name, i, "download"), get_path.random_relative_way(rand_number), class_name])
+
 
 
 def main():
